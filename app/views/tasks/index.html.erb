@@ -1,0 +1,47 @@
+<h1>Todo List</h1>
+
+<h2>Incomplete Tasks</h2>
+<ul>
+  <% @incomplete_tasks.each do |task| %>
+    <li>
+      <%= task.title %> - <strong>incomplete</strong>
+      <%= button_to 'Mark as Complete', complete_task_path(task), method: :patch, class: 'button complete' %>
+      <%= button_to 'Edit', edit_task_path(task), class: 'button edit' %>
+      <%= button_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure you want to delete this task?' }, class: 'button delete' %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Complete Tasks</h2>
+<ul>
+  <% @complete_tasks.each do |task| %>
+    <li>
+      <%= task.title %> - <strong>complete</strong>
+      <%= button_to 'Edit', edit_task_path(task), class: 'button edit' %>
+      <%= button_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure you want to delete this task?' }, class: 'button delete' %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Create a New Task</h3>
+<%= form_with model: @task, local: true do |form| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <ul>
+        <% @task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, "Task Title" %>
+    <%= form.text_field :title, class: 'task-input' %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Task", class: 'button create' %>
+  </div>
+<% end %>

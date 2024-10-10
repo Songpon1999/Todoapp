@@ -1,0 +1,104 @@
+/* สไตล์ทั่วไป */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* สไตล์หัวเรื่อง */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #34495e;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: #16a085;
+    margin-top: 30px;
+}
+
+/* สไตล์รายการ */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* สไตล์ปุ่ม */
+.button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}
+
+.button.delete {
+    background-color: #e74c3c;
+}
+
+.button.delete:hover {
+    background-color: #c0392b;
+}
+
+.button.complete {
+    background-color: #27ae60;
+}
+
+.button.complete:hover {
+    background-color: #219653;
+}
+
+.button.edit {
+    background-color: #f39c12;
+}
+
+.button.edit:hover {
+    background-color: #e67e22;
+}
+
+/* สไตล์ฟอร์ม */
+.task-input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+form {
+    margin-top: 20px;
+}
+
+/* สไตล์สำหรับข้อผิดพลาด */
+#error_explanation {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
